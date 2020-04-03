@@ -4,7 +4,7 @@ const Discord = require('discord-rpc');
 const EventEmitter = require('events');
 
 function makeClient(clientId) {
-  const rpc = new Discord.Client({ 'ipc' });
+  const rpc = new Discord.Client({ transport: 'ipc' });
 
   let connected = false;
   let activityCache = null;
