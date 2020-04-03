@@ -3,10 +3,8 @@
 const Discord = require('discord-rpc');
 const EventEmitter = require('events');
 
-const browser = typeof window !== 'undefined';
-
 function makeClient(clientId) {
-  const rpc = new Discord.Client({ transport: browser ? 'websocket' : 'ipc' });
+  const rpc = new Discord.Client({ 'ipc' });
 
   let connected = false;
   let activityCache = null;
